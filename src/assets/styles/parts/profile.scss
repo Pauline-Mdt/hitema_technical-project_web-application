@@ -1,0 +1,12 @@
+.profile {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 15px;
+
+  &_image {
+    min-width: 200px;
+    min-height: 300px;
+    background-color: lighten($black, 90%);
+  }
+}

@@ -1,0 +1,14 @@
+.button {
+  display: block;
+  margin: 0 auto;
+  padding: 10px 15px;
+  border-width: 0;
+  border-radius: 20px;
+  background: $primary;
+  box-shadow: 0 2px 5px $black;
+  cursor: pointer;
+
+  &:hover, &:focus {
+    background: darken($primary, 10%);
+  }
+}
