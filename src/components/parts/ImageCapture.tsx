@@ -9,17 +9,11 @@ const ImageCapture: React.FC = () => {
         aspectRatio: 2/3,
         facingMode: "user"
     };
-    const {user, setUser} = React.useContext(UserContext);
+    const {userProfile, setUserProfile} = React.useContext(UserContext);
 
     const captureImage = () => {
         const imageCaptured = webcamRef.current.getScreenshot();
-        setUser({
-            ...user,
-            profile: {
-                ...user.profile,
-                picture: imageCaptured,
-            }
-        });
+        setUserProfile({...userProfile, picture: imageCaptured});
     };
 
     return (
@@ -30,6 +24,7 @@ const ImageCapture: React.FC = () => {
             screenshotFormat="image/jpeg"
             videoConstraints={videoConstraints}
             height={300}
+            width={200}
         />
             <p>
                 <button type="submit" className="button" onClick={captureImage}>Prendre la photo</button>

@@ -1,14 +1,10 @@
 interface IUserProfile {
     [key: string]: any;
-    id: string;
-    firstName: string;
-    lastName: string;
-    job: string;
-    arrivalDate: Date;
+    userId: string;
     picture: string;
-}
-
-interface IUser {
-    profile: IUserProfile;
-    material: string[];
+    firstname: string;
+    lastname: string;
+    role: string;
+    dateinscription?: Date;
+    reservationId: string;
 }

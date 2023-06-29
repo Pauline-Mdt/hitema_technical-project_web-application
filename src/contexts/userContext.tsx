@@ -1,29 +1,39 @@
 import React, {createContext} from 'react';
 
 interface UserContextType {
-    user: IUser,
-    setUser: React.Dispatch<React.SetStateAction<IUser>>
+    userProfile: IUserProfile,
+    setUserProfile: React.Dispatch<React.SetStateAction<IUserProfile>>,
+    userReservation: IReservation,
+    setUserReservation: React.Dispatch<React.SetStateAction<IReservation>>,
 }
 
 export const UserContext: React.Context<UserContextType> = createContext({} as UserContextType);
 
-export const userItitialState: IUser = {
-    profile: {
-        id: '',
-        lastName: '',
-        firstName: '',
-        job: '',
-        arrivalDate: new Date(),
-        picture: '',
-    },
-    material: [],
+export const userProfileInitialState: IUserProfile = {
+    userId: '',
+    picture: '',
+    lastname: '',
+    firstname: '',
+    role: '',
+    dateinscription: new Date(),
+    reservationId: '',
 }
+
+export const userReservationInitialState: IReservation = {
+    reservationId: '',
+    userId: '',
+    materiels: [],
+}
+
 export const UserProvider = (props: any) => {
-    const [user, setUser] = React.useState<IUser>(userItitialState);
+    const [userProfile, setUserProfile] = React.useState<IUserProfile>(userProfileInitialState);
+    const [userReservation, setUserReservation] = React.useState<IReservation>(userReservationInitialState);
 
     return <UserContext.Provider value={{
-        user,
-        setUser
+        userProfile,
+        setUserProfile,
+        userReservation,
+        setUserReservation,
     }}>
         {props.children}
     </UserContext.Provider>

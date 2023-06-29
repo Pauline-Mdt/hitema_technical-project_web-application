@@ -1,13 +1,13 @@
 import React from 'react';
 import {useNavigate} from 'react-router-dom';
-import {UserContext, userItitialState} from '../../contexts/userContext';
+import {UserContext, userProfileInitialState} from '../../contexts/userContext';
 
 const Home: React.FC = () => {
-    const {setUser} = React.useContext(UserContext);
+    const {setUserProfile} = React.useContext(UserContext);
     const navigate = useNavigate();
 
     const handleNavigate = (paht: string) => {
-        setUser(userItitialState)
+        setUserProfile(userProfileInitialState)
         navigate(paht)
     }
 

@@ -12,7 +12,7 @@ const Submission: React.FC = () => {
         }, 300000);
 
         return () => clearTimeout(timer);
-    });
+    }, []);
 
     return (
         <>

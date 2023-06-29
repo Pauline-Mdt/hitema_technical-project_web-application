@@ -4,6 +4,7 @@ import Layout from './components/commons/Layout';
 import Home from './components/pages/Home';
 import Submission from './components/pages/Submission';
 import MaterialReservation from './components/pages/MaterialReservation';
+import ProtectedRoute from './components/commons/ProtectedRoute';
 
 const App: React.FC = () => {
     return (
@@ -12,7 +13,10 @@ const App: React.FC = () => {
                 <Route index element={<Home />} />
                 <Route path="login" element={<Submission />} />
                 <Route path="registration" element={<Submission />} />
-                <Route path="material-reservation" element={<MaterialReservation />} />
+                <Route element={<ProtectedRoute />}>
+                    <Route path="material-reservation" element={<MaterialReservation />} />
+                </Route>
+                <Route path="*" />
             </Route>
         </Routes>
     );

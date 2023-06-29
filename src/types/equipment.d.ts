@@ -1,5 +1,6 @@
 interface IEquipment {
-    id: string;
+    materialId: string;
     name: string;
-    quantity: number;
+    quantityA: number;
+    quantityT: number;
 }
