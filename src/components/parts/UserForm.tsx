@@ -42,12 +42,12 @@ const UserForm: React.FC = () => {
                 }
             }
 
-            setIsLoading(true);
+            // setIsLoading(true);
             // TODO: send new user to API
 
             randomBoolean ? navigate('/') : alert('Erreur lors de l\'enregistrement de l\'utilisateur');
         } else {
-            setIsLoading(true);
+            // setIsLoading(true);
             // TODO: check authentification picture
 
             randomBoolean ? navigate('/material-reservation') : alert('Erreur lors de l\'identification de l\'utilisateur');
